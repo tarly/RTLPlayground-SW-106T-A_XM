@@ -3,7 +3,8 @@ name: Build SW-106T-A_XM
 on:
   push:
     paths:
-      - "machine/SW-106T-A_XM.*"
+      - "machine/pcb/SW_106T_A_XM.c"
+      - "machine/machines.json"
       - "config/**"
       - ".github/workflows/build-sw106.yml"
   pull_request:
@@ -24,10 +25,10 @@ jobs:
           apt-get update
           apt-get install -y --no-install-recommends \
             make gcc g++ pkg-config bison flex libboost-dev patch \
-            bzip2 curl ca-certificates xxd python3 libjson-c-dev zlib1g-dev git
+            bzip2 curl ca-certificates xxd python3 libjson-c-dev zlib1g-dev git jq
       - name: Build firmware
         run: |
-          make CI=1 MACHINE=SW-106T-A_XM \
+          make CI=1 MACHINE=XIAOMI_SW_106T_A \
             CONFIG=config/default.txt VERSION=0.2.6 \
             OUTPUT_DIR=dist OUTPUT_NAME=SW-106T-A_XM-V0.2.6.bin
       - name: Verify 512 KB
