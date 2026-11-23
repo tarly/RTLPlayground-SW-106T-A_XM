@@ -1,12 +1,13 @@
+#define MACHINE_CHIPSET RTL8372
 #include "machine_defs.h"
 
 /*
- * RTL8372N reference mapping used by the NONAME-20240111 / Binardat
- * 2G06-04210GSM family: physical RJ45 1-4 are wired to logical 7-4, the
- * SFP cages are logical 3 (right) and 8 (left).
+ * Xiaomi SW-106T-A_XM (RTL8372N, 4 x 2.5G RJ45 + 2 x SFP+).
+ * Copper PHYs need MDI pair polarity 0x03 on 0xa90 (see .mdi_reverse);
+ * with the reset default physical ports 1 and 2 never link.
  *
- * This is a vanilla RTLPlayground machine definition, used to check the
- * Xiaomi board without any custom VLAN/IP/feature changes.
+ * Physical RJ45 1-4 map to logical 4-7; the left SFP+ cage is logical 8
+ * (SDS1, detect GPIO38) and the right one logical 3 (SDS0, detect GPIO37).
  */
 
 __code const struct machine machine = {
@@ -66,3 +67,9 @@ __code const struct machine machine = {
 		0x20, 0x3f, 0x3f, 0x11, 0x10, 0x3f, 0x15, 0x3f, 0x14, 0x3f, 0x18, 0x3f, 0x19, 0x3f, 0x3f, 0x3f, 0x3f, 0x3f, 0x1c, 0x3f, 0x3f, 0x1d, 0x3f, 0x3f, 0x3f, 0x0c, 0x3f, 0x3f
 	},
 };
+
+MACHINE_CUSTOM_INIT(
+	/* V0.2.5: all LEDs off when no link; per-port activity on the correct LED. */
+	REG_SET(RTL837X_REG_LED_GLB_IO_EN, 0xffffffff);
+	REG_SET(RTL837X_REG_LED_GLB_ACTIVE, 0x3fffffff);
+)

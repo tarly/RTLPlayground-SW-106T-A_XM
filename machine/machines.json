@@ -251,7 +251,7 @@
   },
   {
     "machine": "S604GTP_2SX_SL",
-    "friendly_name":  "POEPlus S604GTP-2SX-SL",
+    "friendly_name": "POEPlus S604GTP-2SX-SL",
     "pcb": "RTL_4GT_2S__V1_04"
   },
   {
@@ -260,14 +260,14 @@
     "pcb": "S25G2206FP_V1_1"
   },
   {
-    "machine": "SIRIVISION_SR_S25G2206F",
-    "friendly_name": "Sirivision SR-S25G2206F",
-    "pcb": "SR_S25G2206F_N_V1_2"
-  },
-  {
     "machine": "SIRIVISION_SR_S25G2109F",
     "friendly_name": "Sirivision SR-S25G2109F",
     "pcb": "S25G1109FP_V1_3"
+  },
+  {
+    "machine": "SIRIVISION_SR_S25G2206F",
+    "friendly_name": "Sirivision SR-S25G2206F",
+    "pcb": "SR_S25G2206F_N_V1_2"
   },
   {
     "machine": "SODOLA_SL902_SWTGW124AS",
@@ -323,6 +323,11 @@
     "machine": "VIMIN_S250402_N",
     "friendly_name": "Vimin S250402-N",
     "pcb": "SR_S25G2206F_N_V1_2"
+  },
+  {
+    "machine": "XIAOMI_SW_106T_A",
+    "friendly_name": "SW-106T-A_XM",
+    "pcb": "SW_106T_A_XM"
   },
   {
     "machine": "XIKESTOR_SKS3200M_8GPY1XF",
