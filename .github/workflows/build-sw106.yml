@@ -19,7 +19,7 @@ jobs:
     container:
       image: debian:trixie
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install build dependencies
         run: |
           apt-get update
@@ -36,7 +36,7 @@ jobs:
           test -f dist/SW-106T-A_XM-V0.2.6.bin
           test "$(stat -c%s dist/SW-106T-A_XM-V0.2.6.bin)" -eq 524288
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: SW-106T-A_XM-V0.2.6
           path: dist/SW-106T-A_XM-V0.2.6.bin
