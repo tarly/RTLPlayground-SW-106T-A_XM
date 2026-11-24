@@ -1,3 +1,7 @@
+> **已迁移（2026-11-24）**：三个设备仓库已合并为单仓 <>https://github.com/tarly/RTLPlayground> 。
+> 本仓库仅保留历史提交与 Releases，不再在此更新代码。
+> 新布局：`main` = 上游镜像，本项目在 `dev/xiaomi` 分支；构建与规则见工作区 `xiaomi10g/handoff/repo-layout.md`。
+
 # RTLPlayground
 A Playground for Firmware development for advanced user of RTL8372/RTL8373 based 2.5GBit Switches.
 
